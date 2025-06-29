@@ -14,6 +14,13 @@ def get_posts():
     logger.info(f"GET /posts - Status: {response.status_code}")
     return response
 
+def get_post(post_id):
+    """Retorna post"""
+    url = f"{BASE_URL}/posts/{post_id}"
+    response = requests.get(url)
+    logger.info(f"GET /posts - Status: {response.status_code}")
+    return response
+
 def create_post(title, body, user_id):
     """Cria um novo post"""
     url = f"{BASE_URL}/posts"

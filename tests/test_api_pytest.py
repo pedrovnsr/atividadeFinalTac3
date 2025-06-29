@@ -1,7 +1,7 @@
 # tests/test_api_pytest.py
 
 import pytest
-from app.api_client import get_posts, create_post, delete_post, requests_get_title
+from app.api_client import get_posts, get_post, create_post, delete_post, requests_get_title
 import time
 
 #Test 1: Test do GET
@@ -45,3 +45,10 @@ def test_response_time_get_posts():
 def test_get_title():
     title = requests_get_title()
     assert "JSONPlaceholder" in title
+
+# Teste 9: Testes com multiplos posts
+@pytest.mark.parametrize("post_id", [1, 2, 3])
+def test_multi_posts(post_id):
+    res = get_post(post_id)
+    assert res.status_code == 200
+
