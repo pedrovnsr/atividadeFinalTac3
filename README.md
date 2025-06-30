@@ -33,7 +33,16 @@ pip install -r requirements.txt
 Além das dependências listadas no arquivo de requerimentos, é necessário instalar o navegador utilizado pelo Playwright, isso pode ser feito utilizando o comando: 
 
 ```sh
+
 playwright install chrome
+
+```
+
+Caso esteja no windows, pode ser necessário rodar o comando abaixo também para garantir a instação do playwright:
+
+```sh
+
+playwright install
 ```
 
 ### Instalação do Selenium
